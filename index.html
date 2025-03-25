@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Assistant</title>
+    
+    <!-- CSS Frameworks & Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <div class="chat-info">
+                <div class="avatar">
+                    <i class='bx bx-bot'></i>
+                </div>
+                <div class="info">
+                    <h4>EthioAI</h4>
+                    <span class="status">Online</span>
+                </div>
+            </div>
+            <div class="header-actions">
+                <button class="clear-btn" id="clear-chat" title="Clear chat">
+                    <i class='bx bx-trash'></i>
+                    <span>Clear</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="messages-container">
+            <div class="messages-list" id="chatbox">
+                <div class="message incoming">
+                    <div class="message-content">
+                        <p>ሰላም! እንዴት ልረዳዎት እችላለሁ?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="chat-input-container">
+            <div class="input-wrapper">
+                <textarea 
+                    class="chat-input"
+                    placeholder="መልእክትዎን ይጻፉ..."
+                    rows="1"
+                    spellcheck="false"></textarea>
+                <button class="send-btn" id="send-btn" title="Send message">
+                    <i class='bx bx-send'></i>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JavaScript Dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

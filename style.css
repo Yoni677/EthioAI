@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background: #17212b;
+    height: 100vh;
+}
+
+.chat-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #0E1621;
+}
+
+.chat-header {
+    padding: 15px;
+    background: #17212b;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #253341;
+}
+
+.chat-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar {
+    width: 42px;
+    height: 42px;
+    background: #2B5278;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar i {
+    color: #fff;
+    font-size: 24px;
+}
+
+.info h4 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 2px;
+}
+
+.status {
+    color: #6d7883;
+    font-size: 13px;
+}
+
+.messages-container {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #0E1621;
+}
+
+.messages-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+}
+
+.message.incoming {
+    align-self: flex-start;
+}
+
+.message.outgoing {
+    align-self: flex-end;
+}
+
+.message-content {
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.message.incoming .message-content {
+    background: #182533;
+    color: #fff;
+}
+
+.message.outgoing .message-content {
+    background: #2B5278;
+    color: #fff;
+}
+
+.message-content p {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.chat-input-container {
+    padding: 15px;
+    background: #17212b;
+    border-top: 1px solid #253341;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #253341;
+    border-radius: 22px;
+    padding: 8px 16px;
+}
+
+.chat-input {
+    flex: 1;
+    border: none;
+    background: none;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    max-height: 150px;
+    resize: none;
+}
+
+.chat-input::placeholder {
+    color: #6d7883;
+}
+
+.send-btn {
+    background: none;
+    border: none;
+    color: #2B5278;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-btn i {
+    font-size: 24px;
+}
+
+.send-btn:hover {
+    color: #3a6ea5;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #253341;
+    border-radius: 3px;
+}
+
+.header-actions {
+    margin-left: auto;
+}
+
+.clear-btn {
+    background: #253341;
+    border: none;
+    color: #E83F3F;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+
+.clear-btn i {
+    font-size: 20px;
+}
+
+.clear-btn:hover {
+    background: #2C3C4C;
+    color: #FF4747;
+    transform: scale(1.05);
+}
+
+.clear-btn:active {
+    transform: scale(0.95);
+}
+
+.attachment-actions {
+    display: flex;
+    align-items: center;
+}
+
+.attachment-btn {
+    background: none;
+    border: none;
+    color: #6d7883;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s;
+}
+
+.attachment-btn:hover {
+    color: #3a6ea5;
+}
+
+.attachment-btn i {
+    font-size: 20px;
+}
+
+/* For attached files/images in messages */
+.message-attachment {
+    max-width: 300px;
+    margin-top: 5px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.message-attachment img {
+    max-width: 100%;
+    height: auto;
+}
+
+.message-attachment .file-info {
+    background: #253341;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.file-info i {
+    font-size: 24px;
+    color: #6d7883;
+}
+
+.file-info span {
+    color: #fff;
+    font-size: 14px;
+    word-break: break-all;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .chat-container {
+        height: 100vh;
+        width: 100vw;
+        border-radius: 0;
+    }
+
+    .chat-header {
+        padding: 12px;
+    }
+
+    .avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+    .avatar i {
+        font-size: 20px;
+    }
+
+    .info h4 {
+        font-size: 15px;
+    }
+
+    .status {
+        font-size: 12px;
+    }
+
+    .clear-btn {
+        padding: 6px 10px;
+    }
+
+    .clear-btn i {
+        font-size: 18px;
+    }
+
+    .messages-container {
+        padding: 15px;
+    }
+
+    .message {
+        max-width: 85%;
+    }
+
+    .message-content {
+        padding: 8px 10px;
+    }
+
+    .message-content p {
+        font-size: 13px;
+    }
+
+    .chat-input-container {
+        padding: 12px;
+    }
+
+    .input-wrapper {
+        padding: 6px 12px;
+    }
+
+    .chat-input {
+        font-size: 13px;
+    }
+
+    .send-btn i {
+        font-size: 20px;
+    }
+}
+
+/* For very small screens */
+@media screen and (max-width: 480px) {
+    .chat-header {
+        padding: 10px;
+    }
+
+    .avatar {
+        width: 32px;
+        height: 32px;
+    }
+
+    .info h4 {
+        font-size: 14px;
+    }
+
+    .clear-btn span {
+        display: none; /* Hide "Clear" text on very small screens */
+    }
+
+    .message {
+        max-width: 90%;
+    }
+
+    .message-content {
+        padding: 6px 8px;
+    }
+
+    .chat-input-container {
+        padding: 10px;
+    }
+}
+
+/* For landscape orientation on mobile */
+@media screen and (max-height: 480px) and (orientation: landscape) {
+    .chat-header {
+        padding: 8px;
+    }
+
+    .messages-container {
+        padding: 10px;
+    }
+
+    .chat-input-container {
+        padding: 8px;
+    }
+
+    .input-wrapper {
+        padding: 4px 10px;
+    }
+}
+
+/* Ensure the app takes full height on mobile browsers */
+@supports (-webkit-touch-callout: none) {
+    .chat-container {
+        height: -webkit-fill-available;
+    }
+} 
